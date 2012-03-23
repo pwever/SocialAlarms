@@ -1,0 +1,4 @@
+# beach_id, beach_name
+<% SurfAlarmBeaches.all.each do |beach| %>
+<%= beach.id %>, <%=h beach.name %>
+<% end %>

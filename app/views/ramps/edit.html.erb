@@ -1,0 +1,16 @@
+<h1>Editing ramp</h1>
+
+<% form_for(@ramp) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @ramp %> |
+<%= link_to 'Back', ramps_path %>

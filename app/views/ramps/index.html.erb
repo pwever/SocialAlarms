@@ -1,0 +1,20 @@
+<h1>Listing ramps</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @ramps.each do |ramp| %>
+  <tr>
+    <td><%=h ramp.name %></td>
+    <td><%= link_to 'Show', ramp %></td>
+    <td><%= link_to 'Edit', edit_ramp_path(ramp) %></td>
+    <td><%= link_to 'Destroy', ramp, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ramp', new_ramp_path %>

@@ -1,0 +1,52 @@
+<h1>Editing Traffic Alarm</h1>
+
+<% form_for(@traffic_alarm) do |f| %>
+  <%= f.error_messages %>
+
+  
+  <% if @account && @account.admin -%>
+  <p>
+    <%= f.label :device_id %><br />
+    <%= f.collection_select(:device_id, Device.all, :id, :imei, { :include_blank => "-none-"}) %>
+  </p>
+  <% end -%>
+  
+  <p>
+    <%= f.label :road_id %><br />
+    <%= f.select :road_id, Road.all.collect {|r| [r.name, r.id] }, { :include_blank => "-none-" }, { :onchange => remote_function(:update => 'traffic_alarm_ramp_id', :url => { :action => "ramp_options"}, :with => "'road_id=' + $('traffic_alarm_road_id').value"  ) } %>
+  </p>
+
+  <%
+	ramps = ["-choose a road above-"]
+	ramps = @traffic_alarm.road.ramps.collect {|r| [r.name, r.id]} if @traffic_alarm.road
+  %>
+  <p>
+    <%= f.label :ramp_id %><br />
+    <%= f.select :ramp_id, ramps %>
+  </p>
+
+  <p>
+  <%= f.label :speed %><br />
+  <% if @traffic_alarm.device.allow_online_edit %>
+    <%= f.select :speed,
+	[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85] %>
+	mph
+  <% else %>
+    <%= @traffic_alarm.speed %>mph (can only be set from the device)
+<% end %>
+  </p>
+  <p>
+    <%= f.label :start_time %><br />
+    <%= f.time_select :start_time, {:minute_step => 15} %>
+  </p>
+  <p>
+    <%= f.label :enabled %><br />
+    <%= f.check_box :enabled %>
+  </p>
+  
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', request.env['HTTP_REFERER'] || root_path %>

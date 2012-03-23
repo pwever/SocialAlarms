@@ -1,0 +1,29 @@
+<h1>Surf Alarms</h1>
+
+<table>
+  <tr>
+    <th>Device</th>
+    <th>Enabled</th>
+    <th>Start time</th>
+    <th>Beach</th>
+    <th>Wave height</th>
+  </tr>
+
+<% @surf_alarms.each do |surf_alarm| %>
+  <tr>
+    <td><%=h surf_alarm.device_id %></td>
+    <td><%=h surf_alarm.enabled %></td>
+    <td><%=h surf_alarm.start_time.strftime("%H:%M (%Y-%m-%d)") %></td>
+    <td><%=h surf_alarm.beach.name if surf_alarm.beach %></td>
+    <td><%=h surf_alarm.wave_height %></td>
+    <td>
+	<%= link_to 'Edit', edit_surf_alarm_path(surf_alarm) %>
+    <%= link_to 'Destroy', surf_alarm, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New', new_surf_alarm_path %>

@@ -1,0 +1,39 @@
+<h1>New Twitter Alarm</h1>
+
+<% form_for(@twitter_alarm) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :device_id %><br />
+    <%= f.collection_select(:device_id, Device.all, :id, :imei, { :include_blank => "-none-"}) %>
+  </p>
+  <p>
+    <%= f.label :enabled %><br />
+    <%= f.check_box :enabled %>
+  </p>
+  <p>
+    <%= f.label :start_time %><br />
+    <%= f.time_select :start_time, {:minute_step => 15} %>
+  </p>
+  <p>
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </p>
+  <p>
+	<%= f.label :radius %><br />
+	<%= f.select :radius, [1,2,3,4,5,10,15,20,25] %>
+  </p>
+  <p>
+	<%= f.label :radius_units %><br />
+	<%= f.select :radius_units, ["mi","km"] %>
+  </p>
+  <p>
+    <%= f.label :volume %> (tweets per minute)<br />
+    <% opts = []; 1.upto(25) {|i| opts.push i*10} %>
+    <%= f.select :volume, opts %>tpm
+  <p>
+    <%= f.submit 'Create' %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', twitter_alarms_path %>

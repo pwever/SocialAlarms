@@ -1,0 +1,25 @@
+
+<p>
+  <b>Imei:</b>
+  <%=h @device.imei %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @device.email %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%=h @device.user.username if @device.user %>
+</p>
+
+
+<p>
+  <b>Enabled:</b>
+  <%=h @device.enabled %>
+</p>
+
+
+<%= link_to 'Edit', edit_device_path(@device) %> |
+<%= link_to 'Back', devices_path %>

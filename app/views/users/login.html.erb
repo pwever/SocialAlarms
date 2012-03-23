@@ -1,0 +1,16 @@
+<h1>User Login</h1>
+
+<% form_tag({:action => :login}) do |f, t| %>
+
+  <p>
+    <label for="username">Username</label><br />
+    <%= text_field_tag :username, "" %>
+  </p>
+  <p>
+	<label for="password">Password</label><br />
+    <%= password_field_tag :password, "" %>
+  </p>
+  <p>
+    <%= submit_tag 'Login' %>
+  </p>
+<% end %>

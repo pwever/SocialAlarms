@@ -1,0 +1,7 @@
+
+<p<%= ' class="disabled"' unless twitter_alarm.enabled %>>
+After <span class="editable"><%=h twitter_alarm.start_time.strftime('%H:%M (%Y-%m-%d)') %></span>, alerts you when people in <span class="editable"><%=h twitter_alarm.location %></span> tweet at <span class="editable"><%=h twitter_alarm.volume %> tweets per minute</span>.
+
+<%= link_to 'Edit', edit_twitter_alarm_path(twitter_alarm) %>
+</p>
+

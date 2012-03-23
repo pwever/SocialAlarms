@@ -1,0 +1,4 @@
+# road_id, road_name
+<% Road.all.each do |road| %>
+<%= road.id %>, <%=h road.name %>
+<% end %>

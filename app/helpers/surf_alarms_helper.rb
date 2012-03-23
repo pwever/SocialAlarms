@@ -1,0 +1,2 @@
+module SurfAlarmsHelper
+end

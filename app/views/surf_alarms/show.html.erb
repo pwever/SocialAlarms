@@ -1,0 +1,28 @@
+<p>
+  <b>Device:</b>
+  <%=h @surf_alarm.device_id %>
+</p>
+
+<p>
+  <b>Enabled:</b>
+  <%=h @surf_alarm.enabled %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%=h @surf_alarm.start_time %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @surf_alarm.beach.name if @surf_alarm.beach %>
+</p>
+
+<p>
+  <b>Wave height:</b>
+  <%=h @surf_alarm.wave_height %>
+</p>
+
+
+<%= link_to 'Edit', edit_surf_alarm_path(@surf_alarm) %> |
+<%= link_to 'Back', surf_alarms_path %>

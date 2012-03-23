@@ -1,0 +1,14 @@
+
+
+email_address:  "trust.clock@gmail.com"
+
+smtp_server:    "smtp.gmail.com"
+smtp_port:      587
+smtp_username:  "trust.clock"
+smtp_password:  "trustnokia"
+
+imap_server:    "imap.gmail.com"
+imap_port:      993
+imap_username:  "trust.clock@gmail.com"
+imap_password:  "trustnokia"
+

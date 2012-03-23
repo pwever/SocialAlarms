@@ -1,0 +1,31 @@
+<h1>Twitter Alarms</h1>
+
+<table>
+  <tr>
+    <th>Device</th>
+    <th>Enabled</th>
+    <th>Start time</th>
+    <th>Location</th>
+	<th>Radius</th>
+    <th>Volume</th>
+  </tr>
+
+<% @twitter_alarms.each do |twitter_alarm| %>
+  <tr>
+    <td><%=h twitter_alarm.device_id %></td>
+    <td><%=h twitter_alarm.enabled %></td>
+    <td><%=h twitter_alarm.start_time.strftime("%H:%M (%Y-%m-%d)") %></td>
+    <td><%=h twitter_alarm.location %></td>
+	<td><%=h twitter_alarm.radius %><%=h twitter_alarm.radius_units %></td>
+    <td><%=h twitter_alarm.volume %></td>
+    <td>
+	<%= link_to 'Edit', edit_twitter_alarm_path(twitter_alarm) %>
+    <%= link_to 'Destroy', twitter_alarm, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New', new_twitter_alarm_path %>

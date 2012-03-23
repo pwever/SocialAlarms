@@ -1,0 +1,6 @@
+
+<p<%= ' class="disabled"' unless traffic_alarm.enabled %>>
+After <span class="editable"><%=h traffic_alarm.start_time.strftime('%H:%M (%Y-%m-%d)') %></span>, alerts you when traffic at <span class="editable"><%=h traffic_alarm.ramp.name if traffic_alarm.ramp %></span> moves at or above <span class="editable"><%=h traffic_alarm.speed %> mph</span>.
+	
+<%= link_to 'Edit', edit_traffic_alarm_path(traffic_alarm) %>
+</p>

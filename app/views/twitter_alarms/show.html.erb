@@ -1,0 +1,28 @@
+<p>
+  <b>Device:</b>
+  <%=h @twitter_alarm.device_id %>
+</p>
+
+<p>
+  <b>Enabled:</b>
+  <%=h @twitter_alarm.enabled %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%=h @twitter_alarm.start_time %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%=h @twitter_alarm.location %>
+</p>
+
+<p>
+  <b>Volume:</b>
+  <%=h @twitter_alarm.volume %>
+</p>
+
+
+<%= link_to 'Edit', edit_twitter_alarm_path(@twitter_alarm) %> |
+<%= link_to 'Back', twitter_alarms_path %>

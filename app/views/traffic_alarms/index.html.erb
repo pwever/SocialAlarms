@@ -1,0 +1,31 @@
+<h1>Traffic Alarms</h1>
+
+<table>
+  <tr>
+    <th>Device</th>
+    <th>Enabled</th>
+    <th>Start time</th>
+    <th>Road</th>
+    <th>Ramp</th>
+    <th>Speed</th>
+  </tr>
+
+<% @traffic_alarms.each do |traffic_alarm| %>
+  <tr>
+    <td><%=h traffic_alarm.device_id %></td>
+    <td><%=h traffic_alarm.enabled %></td>
+    <td><%=h traffic_alarm.start_time.strftime("%H:%M (%Y-%m-%d)") %></td>
+    <td><%=h traffic_alarm.road.name if traffic_alarm.road %></td>
+    <td><%=h traffic_alarm.ramp.name if traffic_alarm.ramp %></td>
+    <td><%=h traffic_alarm.speed %></td>
+    <td>
+	<%= link_to 'Edit', edit_traffic_alarm_path(traffic_alarm) %>
+    <%= link_to 'Destroy', traffic_alarm, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New', new_traffic_alarm_path %>

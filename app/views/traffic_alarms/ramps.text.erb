@@ -1,0 +1,6 @@
+# road_id, ramp_id, ramp_name
+<% Road.all.each do |road| %>
+<% road.ramps.each do |ramp| %>
+<%= road.id %>, <%= ramp.id %>, <%=h ramp.name %>
+<% end %>
+<% end %>

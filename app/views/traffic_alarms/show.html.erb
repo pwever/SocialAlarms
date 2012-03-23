@@ -1,0 +1,33 @@
+<p>
+  <b>Device:</b>
+  <%=h @traffic_alarm.device_id %>
+</p>
+
+<p>
+  <b>Enabled:</b>
+  <%=h @traffic_alarm.enabled %>
+</p>
+
+<p>
+  <b>Start time:</b>
+  <%=h @traffic_alarm.start_time %>
+</p>
+
+<p>
+  <b>Freeway:</b>
+  <%=h @traffic_alarm.road.name %>
+</p>
+
+<p>
+  <b>Ramp:</b>
+  <%=h @traffic_alarm.ramp.name %>
+</p>
+
+<p>
+  <b>Speed:</b>
+  <%=h @traffic_alarm.speed %>
+</p>
+
+
+<%= link_to 'Edit', edit_traffic_alarm_path(@traffic_alarm) %> |
+<%= link_to 'Back', traffic_alarms_path %>

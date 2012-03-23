@@ -1,0 +1,17 @@
+<h1><%=h @account.username.capitalize %>'s Devices</h1>
+
+<% @devices.each do |device| %>
+  <div id="device-<%= device.id %>" class="device<%= " disabled" unless device.enabled %>">
+	<span class="id"><%=h device.imei %></span> |
+	<span class="email"><%=h device.email %></span>
+	<%= link_to 'Unregister', {:controller => "devices", :action => "deactivate", :id => device}, { :confirm => 'Are you sure?', :class => "warn" } %>
+	<%= link_to "Edit", edit_device_path(device) %>
+
+  <%= render :partial => "surf_alarms/line", :locals => { :surf_alarm => device.surf_alarm } if device.surf_alarm %>
+  <%= render :partial => "traffic_alarms/line", :locals => { :traffic_alarm => device.traffic_alarm } if device.traffic_alarm %>
+  <%= render :partial => "twitter_alarms/line", :locals => { :twitter_alarm => device.twitter_alarm } if device.twitter_alarm %>
+
+  </div>
+<% end %>
+
+<%= link_to 'Activate new device', activation_path, { :class => "new"} %>

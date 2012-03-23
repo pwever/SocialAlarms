@@ -1,0 +1,221 @@
+
+
+html, body {
+	padding:0;
+	margin:0;
+	
+	font-size:12px;
+	font-family:Trebuchet, Verdana, Helvetica, Arial;
+	
+	color:black;
+	background-color:#CEF;
+}
+
+
+
+/* LAYOUT */
+
+div#container {
+	width:50em;
+	margin:1em auto;
+}
+
+div#content {
+	margin:0;
+	padding:1em;
+	border:1px solid #DDD;
+	background-color:white;
+	-moz-box-shadow:0 0 1.5em #EEE;
+	-webkit-box-shadow:0 0 1.5em #EEE;
+	-moz-border-radius: .3em;
+	-webkit-border-radius: .3em;
+}
+
+
+
+
+/* SHARED STYLES */
+
+a {
+	padding:0.25em;
+	color:white;
+	background-color:#666;
+	text-decoration:none;
+	-moz-border-radius: .3em;
+	-webkit-border-radius: .3em;
+}
+a:hover { background-color:#999; }
+
+a.new:hover { background-color:#CD0; }
+
+a.warn:hover { background-color:orange; }
+
+.grey, .disabled {
+	opacity:0.25;
+}
+
+span.editable {
+	font-weight:bold;
+}
+
+
+
+
+
+/* ALERTS */
+
+.flash {
+	margin:1em;
+}
+
+.notice {
+	color:green;
+}
+
+.warning {
+	color:orange;
+}
+
+.error {
+	color:red;
+}
+
+
+
+
+/* ACCOUNT BAR */
+
+#account {
+	margin:0.25em 0;
+	height: 2em;
+	text-align: right;
+}
+
+#account a {
+	margin-left:0.4em;
+	background-color:black;
+}
+#account a:hover { background-color:#666; }
+
+
+
+
+
+
+
+/* CONTENT STYLES */
+
+h1 {
+	display:inline;
+	margin:0;
+	padding:0;
+	font-size:2em;
+}
+
+
+form input[type=text], form input[type=password] {
+	width:97%;
+	font-size:2em;
+	padding:0.25em;
+	border:0;
+	background-color:#EEE;
+}
+
+.fieldWithErrors input[type=text], .fieldWithErrors select {
+	border:2px solid #C22;
+}
+
+.fieldWithErrors label {
+	color:#C22;
+}
+
+.errorExplanation {
+	border:1px solid #C22;
+	margin-top:1em;
+	padding:0.5em;
+}
+
+.errorExplanation h2, .errorExplanation p {
+	margin:0;
+	padding:0;
+	font-size:1em;
+}
+
+.errorExplanation ul {
+	margin:0;
+	padding:0 0 0 1.5em;
+}
+
+
+
+
+/* DEVICE LIST */
+
+.device {
+	border-top: 1px solid #DDD;
+	margin-top: 1em;
+	margin-bottom: 2em;
+	padding-top: 0.5em;
+}
+
+.device .header .id {
+	font-weight:bold;
+}
+
+.device.disabled .email {
+	text-decoration:line-through;
+}
+
+.device p.disabled span {
+	text-decoration:line-through;
+}
+
+.device a {
+	float:right;
+	margin-left:0.4em;
+}
+
+
+
+
+
+
+/* DEBUG BAR */
+
+ul#debug {
+	background-color:white;
+	border:1px solid #DDD;
+	margin:1em auto;
+	padding:1em;
+	list-style:none;
+	-moz-box-shadow:0 0 1.5em #EEE;
+	-webkit-box-shadow:0 0 1.5em #EEE;
+	-moz-border-radius: .3em;
+	-webkit-border-radius: .3em;
+}
+
+ul#debug li {
+	display:inline;
+	line-height:2.25em;
+	padding-right:0.2em;
+}
+
+
+
+/* scaffolding */
+table {
+	padding:0;
+	margin:0;
+	width:100%;
+}
+th {
+	text-align:left;
+}
+td {
+	padding:0.5em 0;
+	border-top:1px solid #EEE;
+}
+td a {
+	margin-left:0.25em;
+	float:right;
+}

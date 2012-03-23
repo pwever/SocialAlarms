@@ -1,0 +1,5 @@
+
+<p<%= ' class="disabled"' unless surf_alarm.enabled %>>
+After <span class="editable"><%=h surf_alarm.start_time.strftime('%H:%M (%Y-%m-%d)') %></span>, alerts you when the surf in <span class="editable"><%=h surf_alarm.beach.name if surf_alarm.beach %></span> is above <span class="editable"><%=h surf_alarm.wave_height %> feet</span>.
+
+<%= link_to 'Edit', edit_surf_alarm_path(surf_alarm) %>

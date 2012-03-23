@@ -1,0 +1,20 @@
+<h1>Listing roads</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @roads.each do |road| %>
+  <tr>
+    <td><%=h road.name %></td>
+    <td><%= link_to 'Show', road %></td>
+    <td><%= link_to 'Edit', edit_road_path(road) %></td>
+    <td><%= link_to 'Destroy', road, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New road', new_road_path %>

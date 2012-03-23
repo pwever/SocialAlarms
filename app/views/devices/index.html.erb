@@ -1,0 +1,29 @@
+<h1>All Devices</h1>
+
+<table>
+  <tr>
+    <th>Imei</th>
+    <th>Email</th>
+    <th>Online edit</th>
+    <th>User</th>
+    <th>Enabled</th>
+  </tr>
+
+<% @devices.each do |device| %>
+  <tr>
+    <td><%=h device.imei %></td>
+    <td><%=h device.email %></td>
+    <td><%=h device.allow_online_edit %></td>
+    <td><%=h device.user.username if device.user %></td>
+    <td><%=h device.enabled %></td>
+    <td>
+    <%= link_to 'Edit', edit_device_path(device) %>
+    <%= link_to 'Destroy', device, :confirm => 'Are you sure?', :method => :delete %>
+  	</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New', new_device_path %>
