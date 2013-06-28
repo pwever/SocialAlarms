@@ -51,7 +51,7 @@ class TrafficAlarmsController < ApplicationController
   # POST /traffic_alarms
   # POST /traffic_alarms.xml
   def create
-    @traffic_alarm = TrafficAlarm.new(params[:traffic_alarm])
+    @traffic_alarm = TrafficAlarm.new(params[:traffic_alarm].permit!)
     
     respond_to do |format|
       if @traffic_alarm.save

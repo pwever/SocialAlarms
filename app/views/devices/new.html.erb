@@ -1,8 +1,7 @@
 <h1>New Device</h1>
 
-<% form_for(@device) do |f| %>
-  <%= f.error_messages %>
-
+<%= form_for(@device) do |f| %>
+  
   <p>
     <%= f.label :imei %><br />
     <%= f.text_field :imei %>

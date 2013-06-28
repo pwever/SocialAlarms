@@ -80,7 +80,7 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.xml
   def create
-    @user = User.new(params[:user])
+    @user = User.new(params[:user].permit!)
 
     respond_to do |format|
       if @user.save

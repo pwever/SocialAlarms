@@ -1,8 +1,7 @@
 <h1>Editing Traffic Alarm</h1>
 
-<% form_for(@traffic_alarm) do |f| %>
-  <%= f.error_messages %>
-
+<%= form_for(@traffic_alarm) do |f| %>
+  
   
   <% if @account && @account.admin -%>
   <p>

@@ -1,8 +1,7 @@
 <h1>Editing Twitter Alarm</h1>
 
-<% form_for(@twitter_alarm) do |f| %>
-  <%= f.error_messages %>
-
+<%= form_for(@twitter_alarm) do |f| %>
+  
   <% if @account && @account.admin -%>
   <p>
     <%= f.label :device_id %><br />

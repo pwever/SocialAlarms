@@ -158,7 +158,7 @@ class DevicesController < ApplicationController
   # POST /devices
   # POST /devices.xml
   def create
-    @device = Device.new(params[:device])
+    @device = Device.new(params[:device].permit!)
 
     respond_to do |format|
       if @device.save

@@ -1,8 +1,7 @@
 <h1>New ramp</h1>
 
-<% form_for(@ramp) do |f| %>
-  <%= f.error_messages %>
-
+<%= form_for(@ramp) do |f| %>
+  
   <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>

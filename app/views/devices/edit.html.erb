@@ -1,8 +1,7 @@
 <h1>Editing Device</h1>
 
-<% form_for(@device) do |f| %>
-  <%= f.error_messages %>
-
+<%= form_for(@device) do |f| %>
+  
   <% if @account && @account.admin -%>
   <p>
     <%= f.label :user_id %><br />

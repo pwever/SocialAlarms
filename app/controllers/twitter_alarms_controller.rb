@@ -48,7 +48,7 @@ class TwitterAlarmsController < ApplicationController
   # POST /twitter_alarms
   # POST /twitter_alarms.xml
   def create
-    @twitter_alarm = TwitterAlarm.new(params[:twitter_alarm])
+    @twitter_alarm = TwitterAlarm.new(params[:twitter_alarm].permit!)
 
     respond_to do |format|
       if @twitter_alarm.save

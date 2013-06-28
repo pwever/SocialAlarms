@@ -1,8 +1,7 @@
 <h1>New Surf Alarm</h1>
 
-<% form_for(@surf_alarm) do |f| %>
-  <%= f.error_messages %>
-
+<%= form_for(@surf_alarm) do |f| %>
+  
   <p>
     <%= f.label :device_id %><br />
     <%= f.collection_select(:device_id, Device.all, :id, :imei, { :include_blank => "-none-"}) %>

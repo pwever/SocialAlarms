@@ -48,7 +48,7 @@ class SurfAlarmsController < ApplicationController
   # POST /surf_alarms
   # POST /surf_alarms.xml
   def create
-    @surf_alarm = SurfAlarm.new(params[:surf_alarm])
+    @surf_alarm = SurfAlarm.new(params[:surf_alarm].permit!)
 
     respond_to do |format|
       if @surf_alarm.save

@@ -1,8 +1,7 @@
 <h1>New User</h1>
 
-<% form_for(@user) do |f| %>
-  <%= f.error_messages %>
-
+<%= form_for(@user) do |f| %>
+  
   <p>
     <%= f.label :username %><br />
     <%= f.text_field :username %>
